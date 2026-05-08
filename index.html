@@ -43,52 +43,62 @@
   }
 
 
-  .styled-table {
-    display: flex; justify-content: center;
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 5px 5px 0 0;
-    overflow: hidden;
+  /* Center the table within its parent */
+.table-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
 
-    .styled-table thead tr {
-        background-color: #009879;
-        color: #ffffff;
-        text-align: left;
-        font-weight: bold;
-    }
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px 8px 0 0;
+  overflow: hidden; /* Ensures the rounded corners show */
+}
 
-    .styled-table th,
-    .styled-table td {
-        padding: 12px 15px;
-    }
+/* Header Styling - Cyan/Green Gradient */
+.styled-table thead tr {
+  background: linear-gradient(135deg, #00adbc, #27ae60);
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
 
-    .styled-table tbody tr {
-        border-bottom: 1px solid #dddddd;
-    }
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
 
-    .styled-table tbody tr:nth-of-type(even) {
-        background-color: #f3f3f3;
-    }
+/* Zebra Striping & Borders */
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
 
-    .styled-table tbody tr:last-of-type {
-        border-bottom: 2px solid #009879;
-    }
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3fbf9; /* Very light cyan-green tint */
+}
 
-    .styled-table tbody tr.active-row {
-        font-weight: bold;
-        color: #009879;
-    }
+.styled-table tbody tr:last-of-type {
+  border-bottom: 3px solid #27ae60; /* Solid green bottom border */
+}
 
-    /* Hover effect for better UX */
-    .styled-table tbody tr:hover {
-        background-color: #f1f1f1;
-        cursor: pointer;
-    }
+/* Hover Effect */
+.styled-table tbody tr:hover {
+  background-color: #e8f8f5;
+  color: #007c89; /* Darker cyan text on hover */
+  transition: 0.3s;
+}
+
+/* Highlighted Row Style */
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #00adbc;
+}
 </style>
 
 <boddy>
@@ -98,30 +108,36 @@
   </div>
   <h3>865@leerling.parcourstilburg.nl</h3>
   <h2>Dennis Heering</h2>
+  <div class="table-container">
   <table class="styled-table">
     <thead>
-        <tr>
-            <th>Name</th>
-            <th>Points</th>
-            <th>Status</th>
-        </tr>
+      <tr>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Status</th>
+        <th>Score</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Dom</td>
-            <td>6000</td>
-            <td>Active</td>
-        </tr>
-        <tr class="active-row">
-            <td>Melissa</td>
-            <td>5150</td>
-            <td>High Score</td>
-        </tr>
-        <tr>
-            <td>Adam</td>
-            <td>4500</td>
-            <td>Inactive</td>
-        </tr>
+      <tr>
+        <td>Alex Rivera</td>
+        <td>Design</td>
+        <td>Active</td>
+        <td>92</td>
+      </tr>
+      <tr class="active-row">
+        <td>Jordan Smith</td>
+        <td>Development</td>
+        <td>In Progress</td>
+        <td>88</td>
+      </tr>
+      <tr>
+        <td>Casey Lee</td>
+        <td>Marketing</td>
+        <td>Completed</td>
+        <td>95</td>
+      </tr>
     </tbody>
-</table>
+  </table>
+</div>
 </boddy>
