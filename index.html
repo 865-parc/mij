@@ -44,60 +44,77 @@
 
 
   /* Center the table within its parent */
+/* Container for responsiveness and card feel */
 .table-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  overflow-x: auto; /* Scrollable on mobile */
+  font-family: 'Inter', -apple-system, sans-serif;
 }
 
-.styled-table {
+.stats-table {
+  width: 100%;
   border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border-radius: 8px 8px 0 0;
-  overflow: hidden; /* Ensures the rounded corners show */
-}
-
-/* Header Styling - Cyan/Green Gradient */
-.styled-table thead tr {
-  background: linear-gradient(135deg, #00adbc, #27ae60);
-  color: #ffffff;
   text-align: left;
-  font-weight: bold;
 }
 
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
+/* Header Styling */
+.stats-table thead th {
+  padding: 16px;
+  background-color: #f8fafc;
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #e2e8f0;
 }
 
-/* Zebra Striping & Borders */
-.styled-table tbody tr {
-  border-bottom: 1px solid #dddddd;
+/* Row Styling */
+.stats-table tbody td {
+  padding: 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+  font-size: 0.95rem;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3fbf9; /* Very light cyan-green tint */
+/* Hover effect for interactivity */
+.stats-table tbody tr:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.2s ease;
 }
 
-.styled-table tbody tr:last-of-type {
-  border-bottom: 3px solid #27ae60; /* Solid green bottom border */
+/* Emphasizing specific stat values */
+.stat-value {
+  font-weight: 700;
+  color: #1e293b;
 }
 
-/* Hover Effect */
-.styled-table tbody tr:hover {
-  background-color: #e8f8f5;
-  color: #007c89; /* Darker cyan text on hover */
-  transition: 0.3s;
+/* Status Badges */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
 }
 
-/* Highlighted Row Style */
-.styled-table tbody tr.active-row {
-  font-weight: bold;
-  color: #00adbc;
+.badge.success {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.badge.warning {
+  background-color: #fef9c3;
+  color: #a16207;
+}
+
+/* Last row shouldn't have a border */
+.stats-table tbody tr:last-child td {
+  border-bottom: none;
 }
 </style>
 
